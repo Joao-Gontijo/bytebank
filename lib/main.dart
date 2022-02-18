@@ -1,30 +1,49 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(BytebankApp());
+}
+
+class BytebankApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       home: Scaffold(
-        body: ListaTransferencias(),
-        appBar: AppBar(
-          title: const Text('Transferências'),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(Icons.add),
-        ),
+        body: FormularioTransferencia(),
       ),
-    ),
-  );
+    );
+  }
+}
+
+class FormularioTransferencia extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Text('Teste'),
+      appBar: AppBar(
+        title: Text('Criando Transferência'),
+      ),
+    );
+  }
 }
 
 class ListaTransferencias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ItemTransferencias(Transferencia(100, 9991)),
-        ItemTransferencias(Transferencia(350, 9991)),
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          ItemTransferencias(Transferencia(100, 9991)),
+          ItemTransferencias(Transferencia(350, 9991)),
+        ],
+      ),
+      appBar: AppBar(
+        title: const Text('Transferências'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
@@ -38,7 +57,7 @@ class ItemTransferencias extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: Icon(Icons.monetization_on),
+        leading: const Icon(Icons.monetization_on),
         title: Text(_transferencia.valor.toString()),
         subtitle: Text(_transferencia.numeroConta.toString()),
       ),
