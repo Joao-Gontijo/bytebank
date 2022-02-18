@@ -2,29 +2,16 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    Column(
-      children: [
-        Text(
-          'Delivery features faster',
-          textDirection: TextDirection.ltr,
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Transferências'),
         ),
-        Text(
-          'Craft beautiful UIs',
-          textDirection: TextDirection.ltr,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
-        Text(
-          'Craft beautiful UIs',
-          textDirection: TextDirection.ltr,
-        ),
-        Column(
-          children: [
-            Text(
-              'Novo texto',
-              textDirection: TextDirection.ltr,
-            ),
-          ],
-        )
-      ],
+      ),
     ),
   );
 }
