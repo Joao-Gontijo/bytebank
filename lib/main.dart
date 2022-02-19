@@ -56,9 +56,25 @@ class FormularioTransferencia extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              debugPrint("clicou no confirmar");
-              debugPrint(_controladorCampoNumeroConta.text);
-              debugPrint(_controladorCampoValor.text);
+              final int? numeroConta =
+                  int.tryParse(_controladorCampoNumeroConta.text);
+
+              final double? valor =
+                  double.tryParse(_controladorCampoValor.text);
+              if (numeroConta != null && valor != null) {
+                final transferenciaCriada = Transferencia(valor, numeroConta);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('$transferenciaCriada'),
+                  ),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('VALOR INVÁLIDO!'),
+                  ),
+                );
+              }
             },
             child: const Text('Confirmar'),
           ),
@@ -114,4 +130,9 @@ class Transferencia {
   final int numeroConta;
 
   Transferencia(this.valor, this.numeroConta);
+
+  @override
+  String toString() {
+    return 'Transferencia{valor: $valor, numeroConta: $numeroConta}';
+  }
 }
