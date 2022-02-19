@@ -16,6 +16,10 @@ class BytebankApp extends StatelessWidget {
 }
 
 class FormularioTransferencia extends StatelessWidget {
+  final TextEditingController _controladorCampoNumeroConta =
+      TextEditingController();
+  final TextEditingController _controladorCampoValor = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +28,11 @@ class FormularioTransferencia extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
-              style: TextStyle(
+              controller: _controladorCampoNumeroConta,
+              style: const TextStyle(
                 fontSize: 24,
               ),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Número da conta',
                 hintText: '0000',
               ),
@@ -37,10 +42,11 @@ class FormularioTransferencia extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 8.0),
             child: TextField(
-              style: TextStyle(
+              controller: _controladorCampoValor,
+              style: const TextStyle(
                 fontSize: 24,
               ),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 icon: Icon(Icons.monetization_on),
                 labelText: 'Valor',
                 hintText: '0.00',
@@ -48,11 +54,18 @@ class FormularioTransferencia extends StatelessWidget {
               keyboardType: TextInputType.number,
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: const Text('Confirmar'))
+          ElevatedButton(
+            onPressed: () {
+              debugPrint("clicou no confirmar");
+              debugPrint(_controladorCampoNumeroConta.text);
+              debugPrint(_controladorCampoValor.text);
+            },
+            child: const Text('Confirmar'),
+          ),
         ],
       ),
       appBar: AppBar(
-        title: Text('Criando Transferência'),
+        title: const Text('Criando Transferência'),
       ),
     );
   }
