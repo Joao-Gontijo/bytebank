@@ -58,7 +58,7 @@ class FormularioTransferencia extends StatelessWidget {
       final transferenciaCriada = Transferencia(valor, numeroConta);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('$transferenciaCriada'),
+          content: Text('SALVO COM SUCESSO!'),
         ),
       );
       Navigator.pop(context, transferenciaCriada);

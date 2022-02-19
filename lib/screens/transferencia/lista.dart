@@ -36,9 +36,7 @@ class ListaTransferenciasState extends State<ListaTransferencias> {
                 return FormularioTransferencia();
               },
             ),
-          );
-          future.then((transferenciaRecebida) {
-            debugPrint('$transferenciaRecebida');
+          ).then((transferenciaRecebida) {
             setState(() {
               widget._transferencias.add(transferenciaRecebida);
             });

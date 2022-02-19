@@ -1,16 +1,28 @@
 # bytebank
 
-A new Flutter project.
+Projeto desenvolvido no curso Fundamentos de Flutter da Alura. O ByteBank é um App de simulação de transferências, informando o número da conta e valor monetário.
 
-## Getting Started
+## Tecnologias
 
-This project is a starting point for a Flutter application.
+Com este projeto, aprendi mais sobre a execução de um projeto flutter e os widgets:
 
-A few resources to get you started if this is your first Flutter project:
+1. [Column](https://api.flutter.dev/flutter/widgets/Column-class.html)  
+2. [Card](https://api.flutter.dev/flutter/material/Card-class.html)  
+3. [ListTile](https://api.flutter.dev/flutter/material/ListTile-class.html)  
+4. [Padding](https://api.flutter.dev/flutter/widgets/Padding-class.html)  
+5. [TextField](https://api.flutter.dev/flutter/material/TextField-class.html)  
+6. [ElevatedButton](https://api.flutter.dev/flutter/material/ElevatedButton-class.html)  
+7. [Text](https://api.flutter.dev/flutter/widgets/Text-class.html)  
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Para abrir e rodar o projeto
+
+Para executar o projeto, é necessário:
+- Flutter instalado na sua máquina
+- Editor de texto ou IDE como Android Studio, Intellij Idea ou VS Code.
+
+[Documentação para Instalar](https://docs.flutter.dev/get-started/install)
+
+## Mais informações
+
+ - [Minhas Anotações e Estudos](https://mini-change-a33.notion.site/Flutter-Alura-d6596e13a42443d3ac027def7fc4635a)
