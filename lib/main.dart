@@ -8,9 +8,20 @@ class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: ListaTransferencias(),
+      theme: ThemeData(
+        colorScheme:
+            ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple).copyWith(
+          secondary: Colors.blueAccent[700],
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.purple[700],
+        ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blueAccent[700],
+          textTheme: ButtonTextTheme.accent,
+        ),
       ),
+      home: ListaTransferencias(),
     );
   }
 }
@@ -23,27 +34,29 @@ class FormularioTransferencia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Editor(
-            controlador: _controladorCampoNumeroConta,
-            dica: '0000',
-            rotulo: 'Número da Conta',
-            icone: null,
-          ),
-          Editor(
-            controlador: _controladorCampoValor,
-            dica: '0.00',
-            rotulo: 'Valor',
-            icone: Icons.monetization_on,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              _criaTransferencia(context);
-            },
-            child: const Text('Confirmar'),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Editor(
+              controlador: _controladorCampoNumeroConta,
+              dica: '0000',
+              rotulo: 'Número da Conta',
+              icone: null,
+            ),
+            Editor(
+              controlador: _controladorCampoValor,
+              dica: '0.00',
+              rotulo: 'Valor',
+              icone: Icons.monetization_on,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _criaTransferencia(context);
+              },
+              child: const Text('Confirmar'),
+            ),
+          ],
+        ),
       ),
       appBar: AppBar(
         title: const Text('Criando Transferência'),
